@@ -16,12 +16,10 @@ export default function Shell() {
 
   return (
     <div className="fixed inset-0 overflow-hidden bg-[#1E2749] text-[#FAFAFF]">
-      {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url('${siteConfig.heroImage}')` }}
       />
-      {/* Dark overlay for depth */}
       <div className="absolute inset-0 bg-[rgba(30,39,73,0.5)]" />
 
       <TopBar onNavigate={navigate} />
@@ -29,15 +27,23 @@ export default function Shell() {
       <main className="absolute inset-0 z-10 flex items-center px-6 pt-24 pb-28 md:px-16 lg:px-24">
         <div className="w-full max-w-sm md:max-w-md">
           <div className="mb-5 h-1.5 w-16 bg-[#E4D9FF]" />
-          <div
-            key={view}
-            className="card-scroll max-h-[50vh] overflow-y-auto rounded-sm bg-[#F6F4F0] p-7 text-[#1E2749] shadow-2xl md:max-h-[58vh] md:p-9"
-            style={{ animation: "var(--animate-card-in)" }}
-          >
-            {view === "landing" && <LandingView onNavigate={navigate} />}
-            {view === "about" && <AboutView />}
-            {view === "leadership" && <LeadershipView />}
-            {view === "contact" && <ContactView />}
+
+          {/* Wrapper — holds size, shadow, corners */}
+          <div className="relative max-h-[50vh] overflow-hidden rounded-sm shadow-2xl md:max-h-[58vh]">
+            {/* Overlay — translucent periwinkle, sits on top */}
+            <div className="pointer-events-none absolute inset-0 z-10 bg-[#E4D9FF]/25" />
+
+            {/* Scroll container — content */}
+            <div
+              key={view}
+              className="card-scroll max-h-[50vh] overflow-y-auto bg-[#F6F4F0] p-7 text-[#1E2749] md:max-h-[58vh] md:p-9"
+              style={{ animation: "var(--animate-card-in)" }}
+            >
+              {view === "landing" && <LandingView onNavigate={navigate} />}
+              {view === "about" && <AboutView />}
+              {view === "leadership" && <LeadershipView />}
+              {view === "contact" && <ContactView />}
+            </div>
           </div>
         </div>
       </main>
@@ -46,3 +52,4 @@ export default function Shell() {
     </div>
   );
 }
+ 
