@@ -1,15 +1,15 @@
 const inputClasses =
-  "w-full border border-ink/20 bg-surface px-4 py-3 font-sans text-sm text-ink placeholder:text-charcoal/40 outline-none transition-colors focus:border-primary";
+  "w-full rounded-sm border border-[#273469]/20 bg-white/70 px-3 py-2.5 font-sans text-sm text-ink placeholder:text-ink/40 outline-none transition-all duration-200 focus:border-[#4C63D2] focus:bg-white focus:ring-1 focus:ring-[#4C63D2]/20";
 
 const labelClasses =
-  "mb-2 block font-sans text-[11px] font-bold uppercase tracking-[0.12em] text-ink";
+  "mb-1.5 block font-sans text-[10px] font-bold uppercase tracking-[0.15em] text-primary";
 
 export default function ContactForm() {
   return (
     <form
       action="https://submit-form.com/VAPC6QdGP"
       method="POST"
-      className="space-y-5"
+      className="space-y-4"
     >
       <div>
         <label htmlFor="name" className={labelClasses}>
@@ -46,13 +46,13 @@ export default function ContactForm() {
           name="message"
           placeholder="Message"
           required
-          rows={4}
+          rows={3}
           className={`${inputClasses} resize-y`}
         />
       </div>
       <button
         type="submit"
-        className="w-full bg-ink px-6 py-3.5 font-sans text-[11px] font-bold uppercase tracking-[0.12em] text-surface transition-opacity hover:opacity-90"
+        className="w-full bg-[#1E2749] px-5 py-3 font-sans text-[10px] font-bold uppercase tracking-[0.15em] text-[#FAFAFF] transition-all duration-200 hover:bg-[#4C63D2] hover:shadow-lg"
       >
         Send
       </button>

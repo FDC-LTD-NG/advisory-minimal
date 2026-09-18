@@ -15,20 +15,25 @@ export default function Shell() {
   const navigate = (v: View) => setView(v);
 
   return (
-    <div className="fixed inset-0 overflow-hidden bg-ink text-surface">
-      <div className="absolute inset-0 bg-gradient-to-br from-ink via-primary to-ink" />
+    <div className="fixed inset-0 overflow-hidden bg-[#1E2749] text-[#FAFAFF]">
+      {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url('${siteConfig.heroImage}')` }}
       />
-      <div className="absolute inset-0 bg-ink/40" />
+      {/* Dark overlay for depth */}
+      <div className="absolute inset-0 bg-[rgba(30,39,73,0.5)]" />
 
       <TopBar onNavigate={navigate} />
 
-      <main className="absolute inset-0 z-10 flex items-center px-8 pt-24 pb-28 md:px-16 lg:px-24">
-        <div className="w-full max-w-xl">
-          <div className="mb-6 h-1.5 w-20 bg-accent" />
-          <div className="card-scroll max-h-[60vh] overflow-y-auto bg-surface p-8 text-ink shadow-2xl md:p-12">
+      <main className="absolute inset-0 z-10 flex items-center px-6 pt-24 pb-28 md:px-16 lg:px-24">
+        <div className="w-full max-w-sm md:max-w-md">
+          <div className="mb-5 h-1.5 w-16 bg-[#E4D9FF]" />
+          <div
+            key={view}
+            className="card-scroll max-h-[50vh] overflow-y-auto rounded-sm bg-[#F6F4F0] p-7 text-[#1E2749] shadow-2xl md:max-h-[58vh] md:p-9"
+            style={{ animation: "var(--animate-card-in)" }}
+          >
             {view === "landing" && <LandingView onNavigate={navigate} />}
             {view === "about" && <AboutView />}
             {view === "leadership" && <LeadershipView />}

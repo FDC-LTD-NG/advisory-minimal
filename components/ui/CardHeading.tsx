@@ -4,7 +4,7 @@ export default function CardHeading({
   children: React.ReactNode;
 }) {
   return (
-    <h2 className="font-sans text-2xl font-bold uppercase leading-none tracking-[0.02em] text-ink md:text-3xl">
+    <h2 className="font-sans text-xl font-bold uppercase leading-none tracking-[0.04em] text-ink md:text-2xl">
       {children}
     </h2>
   );

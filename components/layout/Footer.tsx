@@ -15,10 +15,7 @@ export default function Footer({
 }) {
   return (
     <footer className="absolute inset-x-0 bottom-0 z-20 flex flex-col items-start gap-4 px-8 py-6 md:flex-row md:items-end md:justify-between md:px-16">
-      {/* Left — copyright + fdcng.com together */}
       <p className="flex flex-wrap items-center gap-x-4 gap-y-2 font-sans text-[11px] font-semibold text-surface">
-        <span>© {new Date().getFullYear()} FDC Advisory</span>
-        <span className="h-px w-4 bg-accent" />
         <a
           href="https://fdcng.com"
           target="_blank"
@@ -27,17 +24,18 @@ export default function Footer({
         >
           fdcng.com
         </a>
+        <span className="h-px w-4 bg-accent" />
+        <span>© {new Date().getFullYear()} FDC Advisory</span>
       </p>
 
-      {/* Right — nav in dark bar */}
       <nav className="bg-charcoal/85 backdrop-blur-sm">
-        <ul className="flex items-center px-6 py-3">
+        <ul className="flex items-center px-5 py-2.5">
           {FOOTER_NAV.map((item, i) => (
             <li key={item.view} className="flex items-center">
-              {i > 0 && <span className="mx-4 h-px w-4 bg-accent" />}
+              {i > 0 && <span className="mx-3 h-px w-4 bg-accent" />}
               <button
                 onClick={() => onNavigate(item.view)}
-                className="font-sans text-[11px] font-bold uppercase tracking-[0.12em] text-surface transition-colors hover:text-accent"
+                className="font-sans text-[10px] font-bold uppercase tracking-[0.15em] text-surface transition-colors duration-200 hover:text-accent"
               >
                 {item.label}
               </button>
