@@ -14,16 +14,29 @@ export default function LandingView({
       <CardHeading>FDC Advisory</CardHeading>
 
       <p className="mt-6 font-sans text-base leading-snug text-ink">
-        {siteConfig.managerName} is a Lagos-based investment advisory firm
-        registered with the Securities and Exchange Commission (SEC) Nigeria. We
-        bring institutional discipline and modern technology to help individuals
-        and institutions build, protect, and grow their wealth.
+        {siteConfig.managerName} is a Lagos-based Fund and Portfolio Manager
+        duly registered with the Securities and Exchange Commission (SEC) of
+        Nigeria.
       </p>
 
       <p className="mt-4 font-sans text-base leading-snug text-ink">
-        Our broad mandate and flexible approach enable us to serve clients
-        across public and private markets, with the transparency, governance,
-        and rigour that Nigeria's financial sector demands.
+        We bring institutional discipline and modern technology to help
+        individuals and institutions build, protect, and grow their wealth.
+      </p>
+
+      <p className="mt-4 font-sans text-base leading-snug text-ink">
+        FDC Advisory Limited is affiliated with{" "}
+        <a
+          href={siteConfig.affiliate.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline underline-offset-4 hover:text-primary"
+        >
+          {siteConfig.affiliate.name}
+        </a>
+        , a well-established financial and economic advisory firm with extensive
+        experience in economic research, financial analysis, and advisory
+        services.
       </p>
 
       <div className="mt-8 flex flex-wrap items-center gap-6">

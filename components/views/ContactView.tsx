@@ -13,7 +13,13 @@ export default function ContactView() {
             {siteConfig.managerName}
           </p>
           <p className="mt-1 font-sans text-base leading-snug text-ink">
-            {siteConfig.contact.address}
+            9a Idejo Street
+            <br />
+            Off Adeola Odeku Street
+            <br />
+            Victoria Island, Lagos
+            <br />
+            Nigeria
           </p>
         </div>
 
@@ -44,14 +50,14 @@ export default function ContactView() {
       <p className="mt-8 border-t border-ink/10 pt-6 font-sans text-xs leading-relaxed text-ink/60">
         Part of the{" "}
         <a
-          href="https://fdcng.com"
+          href={siteConfig.affiliate.url}
           target="_blank"
           rel="noopener noreferrer"
           className="underline underline-offset-2 hover:text-primary"
         >
-          FDC Ltd
+          {siteConfig.affiliate.name}
         </a>{" "}
-        group — fdcng.com
+        group
       </p>
     </>
   );
