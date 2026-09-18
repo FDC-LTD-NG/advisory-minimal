@@ -1,0 +1,1 @@
+export type View = "landing" | "about" | "leadership" | "contact";
